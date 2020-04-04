@@ -28,20 +28,24 @@ To skip the error about not found path, we are executing the docker build using 
 
 **Original code:**
 
-```shell
+```powershell
 docker build -f "C:\Workspace\Training\docker-training\Code\Session6\Dockerfile" --force-rm -t session6:dev --target base  --label "com.microsoft.created-by=visual-studio" --label "com.microsoft.visual-studio.project-name=Session6" "C:\Workspace\Training\docker-training\Code" 
 
 ```
 **Modified code:**
 
-```shell
+```powershell
 docker build -f "C:\Workspace\Training\docker-training\Code\Session6\Dockerfile" --force-rm -t session6base "C:\Workspace\Training\docker-training\Code"
 
+```
+
+**Commands:**
+
+```powershell
 docker run --name container_port1 -p 8095:80 ed5d20047f4e
 
 docker run --name container_port2 -p 8096:80  ed5d20047f4e
 
 docker run --name container_var -p 8098:80 -e "AppSettings:Title"="Hellow from Docker Container" session6base2
-
 ```
 
